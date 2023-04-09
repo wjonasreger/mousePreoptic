@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2023 mousePreoptic authors
+Copyright (c) 2023 mousePreopticR authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

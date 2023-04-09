@@ -1,8 +1,8 @@
-Package: mousePreoptic
+Package: mousePreopticR
 Title: Mouse Hypothalamic Preoptic Region Cell Datasets and R Functions
 Version: 0.0.0.9000
 Authors@R: 
-    person("Jonas", "Reger", , "wreger2@illinois.edu", role = c("aut", "cre"))
+    person("Jonas", "Reger", , "wjonasreger@gmail.com", role = c("aut", "cre"))
 Description: Bioinformatics datasets and convenience functions to reconstruct data components to make data loading/sharing easier for collaborative analysis.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -14,5 +14,5 @@ Config/testthat/edition: 3
 Imports: 
     Matrix,
     stringr
-URL: https://github.com/wjonasreger/mousePreoptic
-BugReports: https://github.com/wjonasreger/mousePreoptic/issues
+URL: https://github.com/wjonasreger/mousePreopticR
+BugReports: https://github.com/wjonasreger/mousePreopticR/issues

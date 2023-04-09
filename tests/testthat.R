@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/reference/test_package.html#special-files
 
 library(testthat)
-library(mousePreoptic)
+library(mousePreopticR)
 
-test_check("mousePreoptic")
+test_check("mousePreopticR")

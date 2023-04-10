@@ -11,13 +11,13 @@ matrixSplit(data_file, nb_comp, verbose = FALSE)
 
 \item{nb_comp}{A numeric vector with one element to specify how many components to split the file into}
 
-\item{verbose}{A boolean to print result summary}
+\item{verbose}{A boolean to print result summary (Default: FALSE)}
 }
 \description{
 Matrix split function for large Matrix files
 }
 \examples{
 \dontrun{
-matrixSplit(data_file = "data/example_data/matrix.mtx", nb_comp = 2)
+matrixSplit(data_file = "data/example_data/matrix.mtx", nb_comp = 2, verbose = FALSE)
 }
 }

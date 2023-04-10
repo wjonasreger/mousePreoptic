@@ -2,13 +2,13 @@
 #'
 #' @param data_file A character vector with one element as the path to the file to split
 #' @param nb_comp A numeric vector with one element to specify how many components to split the file into
-#' @param verbose A boolean to print result summary
+#' @param verbose A boolean to print result summary (Default: FALSE)
 #'
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' matrixSplit(data_file = "data/example_data/matrix.mtx", nb_comp = 2)
+#' matrixSplit(data_file = "data/example_data/matrix.mtx", nb_comp = 2, verbose = FALSE)
 #' }
 matrixSplit = function(data_file, nb_comp, verbose = FALSE) {
   # create data directory

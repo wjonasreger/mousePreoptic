@@ -9,9 +9,9 @@ csvMerge(data_dir, axis = 0, verbose = FALSE)
 \arguments{
 \item{data_dir}{A character vector with one element as the path to the directory of components to merge}
 
-\item{axis}{A numeric vector with one element to specify axis to merge (0: rows, 1: columns)}
+\item{axis}{A numeric vector with one element to specify axis to merge (0: rows, 1: columns) (Default: 0)}
 
-\item{verbose}{A boolean to print result summary}
+\item{verbose}{A boolean to print result summary (Default: FALSE)}
 }
 \value{
 A Data.Frame dataset
@@ -21,6 +21,6 @@ CSV merge function for CSV component files
 }
 \examples{
 \dontrun{
-csvMerge(data_dir = "data/example_data/data")
+csvMerge(data_dir = "data/example_data/data", axis = 0, verbose = FALSE)
 }
 }

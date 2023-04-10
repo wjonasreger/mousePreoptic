@@ -11,15 +11,15 @@ csvSplit(data_file, nb_comp, axis = 0, verbose = FALSE)
 
 \item{nb_comp}{A numeric vector with one element to specify how many components to split the file into}
 
-\item{axis}{A numeric vector with one element to specify axis to split (0: rows, 1: columns)}
+\item{axis}{A numeric vector with one element to specify axis to split (0: rows, 1: columns) (Default: 0)}
 
-\item{verbose}{A boolean to print result summary}
+\item{verbose}{A boolean to print result summary (Default: FALSE)}
 }
 \description{
 CSV split function for large CSV files
 }
 \examples{
 \dontrun{
-csvSplit(data_file = "data/example_data/data.csv", nb_comp = 2, axis = 0)
+csvSplit(data_file = "data/example_data/data.csv", nb_comp = 2, axis = 0, verbose = FALSE)
 }
 }

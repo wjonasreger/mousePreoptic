@@ -1,15 +1,15 @@
 #' CSV merge function for CSV component files
 #'
 #' @param data_dir A character vector with one element as the path to the directory of components to merge
-#' @param axis A numeric vector with one element to specify axis to merge (0: rows, 1: columns)
-#' @param verbose A boolean to print result summary
+#' @param axis A numeric vector with one element to specify axis to merge (0: rows, 1: columns) (Default: 0)
+#' @param verbose A boolean to print result summary (Default: FALSE)
 #'
 #' @return A Data.Frame dataset
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' csvMerge(data_dir = "data/example_data/data")
+#' csvMerge(data_dir = "data/example_data/data", axis = 0, verbose = FALSE)
 #' }
 csvMerge = function(data_dir, axis = 0, verbose = FALSE) {
   # empty data

@@ -9,7 +9,7 @@ matrixMerge(data_dir, verbose = FALSE)
 \arguments{
 \item{data_dir}{A character vector with one element as the path to the directory of components to merge}
 
-\item{verbose}{A boolean to print result summary}
+\item{verbose}{A boolean to print result summary (Default: FALSE)}
 }
 \value{
 A dgTMatrix object dataset
@@ -19,6 +19,6 @@ Matrix merge function for Matrix component files
 }
 \examples{
 \dontrun{
-matrixMerge(data_dir = "data/example_data/matrix")
+matrixMerge(data_dir = "data/example_data/matrix", verbose = FALSE)
 }
 }

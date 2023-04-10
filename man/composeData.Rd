@@ -7,15 +7,15 @@
 composeData(verbose = FALSE, merge_verbose = FALSE)
 }
 \arguments{
-\item{verbose}{A boolean to print result summary for saving objects}
+\item{verbose}{A boolean to print result summary for saving objects (Default: FALSE)}
 
-\item{merge_verbose}{A boolean to print result summary for data merges}
+\item{merge_verbose}{A boolean to print result summary for data merges (Default: FALSE)}
 }
 \description{
 Compose package datasets from component data
 }
 \examples{
 \dontrun{
-composeData()
+composeData(verbose = FALSE, merge_verbose = FALSE)
 }
 }

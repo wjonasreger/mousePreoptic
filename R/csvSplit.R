@@ -2,14 +2,14 @@
 #'
 #' @param data_file A character vector with one element as the path to the file to split
 #' @param nb_comp A numeric vector with one element to specify how many components to split the file into
-#' @param axis A numeric vector with one element to specify axis to split (0: rows, 1: columns)
-#' @param verbose A boolean to print result summary
+#' @param axis A numeric vector with one element to specify axis to split (0: rows, 1: columns) (Default: 0)
+#' @param verbose A boolean to print result summary (Default: FALSE)
 #'
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' csvSplit(data_file = "data/example_data/data.csv", nb_comp = 2, axis = 0)
+#' csvSplit(data_file = "data/example_data/data.csv", nb_comp = 2, axis = 0, verbose = FALSE)
 #' }
 csvSplit = function(data_file, nb_comp, axis = 0, verbose = FALSE) {
   # create data directory

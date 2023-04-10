@@ -4,16 +4,18 @@
 \alias{loadData}
 \title{Load package datasets from composed Rdata}
 \usage{
-loadData(verbose = FALSE)
+loadData(datasets = "all", verbose = FALSE)
 }
 \arguments{
-\item{verbose}{A boolean to print result summary for loading objects}
+\item{datasets}{Character vector to select which datasets to load - one of 'all', 'bio', or 'example' (Default: "all")}
+
+\item{verbose}{A boolean to print result summary for loading objects (Default: FALSE)}
 }
 \description{
 Load package datasets from composed Rdata
 }
 \examples{
 \dontrun{
-loadData()
+loadData(datasets = "all", verbose = FALSE)
 }
 }

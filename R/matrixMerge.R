@@ -1,14 +1,14 @@
 #' Matrix merge function for Matrix component files
 #'
 #' @param data_dir A character vector with one element as the path to the directory of components to merge
-#' @param verbose A boolean to print result summary
+#' @param verbose A boolean to print result summary (Default: FALSE)
 #'
 #' @return A dgTMatrix object dataset
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' matrixMerge(data_dir = "data/example_data/matrix")
+#' matrixMerge(data_dir = "data/example_data/matrix", verbose = FALSE)
 #' }
 matrixMerge = function(data_dir, verbose = FALSE) {
   i = c(); j = c(); x = c()

@@ -9,7 +9,7 @@
 #' \dontrun{
 #' composeData()
 #' }
-composeData = function(verbose = TRUE, merge_verbose = FALSE) {
+composeData = function(verbose = FALSE, merge_verbose = FALSE) {
   # compose and convert ex_data
   ex_data_path = system.file("extdata/ex_data", package = "mousePreopticR")
   ex_data_targ = system.file("extdata", package = "mousePreopticR")

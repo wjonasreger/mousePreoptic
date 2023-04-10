@@ -8,7 +8,7 @@
 #' \dontrun{
 #' loadData()
 #' }
-loadData = function(verbose = TRUE) {
+loadData = function(verbose = FALSE) {
   # load ex_data
   load(system.file("extdata/ex_data.Rdata", package = "mousePreopticR"), envir = globalenv(), verbose = verbose)
 

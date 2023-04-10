@@ -4,7 +4,7 @@
 \alias{loadData}
 \title{Load package datasets from composed Rdata}
 \usage{
-loadData(verbose = TRUE)
+loadData(verbose = FALSE)
 }
 \arguments{
 \item{verbose}{A boolean to print result summary for loading objects}

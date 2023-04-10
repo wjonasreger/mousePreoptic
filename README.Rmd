@@ -31,10 +31,26 @@ devtools::install_github("wjonasreger/mousePreopticR")
 
 ## Usage
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to setup the package datasets for analysis:
+
+***NOTE:* The package datasets are split components of original large datasets due to GitHub size limits. So, the documented datasets (i.e., `ex_data`, `ex_matrix`) need to be composed once after each install/update of the package. Then package datasets can be loaded anytime after the initial composition step. You may need to restart your R session after composition is completed.**
 
 ```{r example}
+# load dependency packages
+library(Matrix)
+# load mousePreopticR package
 library(mousePreopticR)
-## basic example code
+
+# compose datasets
+composeData()
+
+# load all datasets
+#    - load all datasets (Default): loadData(datasets = "all")
+#    - load only example datasets: loadData(datasets = "example")
+#    - load only bio datasets: loadData(datasets = "bio")
+loadData()
+
+# view data (e.g., ex_matrix)
+ex_matrix
 ```
 

@@ -56,9 +56,4 @@ matrixSplit = function(data_file, nb_comp, verbose = FALSE) {
     "", sep = "\n"
   )
   if (verbose) cat(message)
-
-  # print(paste("Split:", data_file))
-  # print(paste("Data dimension:", length(mat@i), length(mat@j)))
-  # print(paste("Number of components:", nb_comp))
-  # print(paste0("Components saved in: ~/", data_dir))
 }

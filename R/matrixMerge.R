@@ -35,10 +35,5 @@ matrixMerge = function(data_dir, verbose = FALSE) {
     "", sep = "\n"
   )
   if (verbose) cat(message)
-
-  # print(paste("Merge:", data_dir))
-  # print(paste("Number of components:", ((length(file_list)-1)/3)))
-  # print(paste("Number of files:", length(file_list)))
-  # print(paste("Data dimension:", length(mat@i), length(mat@j)))
   return (mat)
 }

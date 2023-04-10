@@ -33,9 +33,5 @@ csvMerge = function(data_dir, axis = 0, verbose = FALSE) {
     "", sep = "\n"
   )
   if (verbose) cat(message)
-
-  # print(paste("Merge:", data_dir))
-  # print(paste("Number of components:", length(file_list)))
-  # print(paste("Data dimension:", nrow(df), ncol(df)))
   return (df)
 }

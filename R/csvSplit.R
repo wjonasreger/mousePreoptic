@@ -52,9 +52,4 @@ csvSplit = function(data_file, nb_comp, axis = 0, verbose = FALSE) {
     "", sep = "\n"
   )
   if (verbose) cat(message)
-
-  # print(paste("Split:", data_file))
-  # print(paste("Data dimension:", nrow(df), ncol(df)))
-  # print(paste("Number of components:", nb_comp))
-  # print(paste0("Components saved in: ~/", data_dir))
 }

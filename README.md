@@ -42,20 +42,12 @@ library(mousePreopticR)
 
 # compose datasets
 composeData()
-#> Saving objects:
-#>   ex_data.Rdata
-#> Saving objects:
-#>   ex_matrix.Rdata
 
 # load all datasets
 #    - load all datasets (Default): loadData(datasets = "all")
 #    - load only example datasets: loadData(datasets = "example")
 #    - load only bio datasets: loadData(datasets = "bio")
 loadData()
-#> Loading objects:
-#>   ex_data
-#> Loading objects:
-#>   ex_matrix
 
 # view data (e.g., ex_matrix)
 ex_matrix

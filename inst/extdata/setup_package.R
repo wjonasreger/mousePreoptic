@@ -18,6 +18,7 @@ file.copy(from = file.path(ext_man_path, rd_files), to = file.path(tar_man_path,
           overwrite = TRUE)
 
 devtools::install()
+.rs.restartR()
 
 # here::here()
 # source(file.path(here::here(), "inst/extdata/setup_package.R"))

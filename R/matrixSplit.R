@@ -2,6 +2,7 @@
 #'
 #' @param data_file A character vector with one element as the path to the file to split
 #' @param nb_comp A numeric vector with one element to specify how many components to split the file into
+#' @param verbose A boolean to print result summary
 #'
 #' @export
 #'
@@ -9,7 +10,7 @@
 #' \dontrun{
 #' matrixSplit(data_file = "data/example_data/matrix.mtx", nb_comp = 2)
 #' }
-matrixSplit = function(data_file, nb_comp) {
+matrixSplit = function(data_file, nb_comp, verbose = FALSE) {
   # create data directory
   data_dir = utils::head(strsplit(data_file, "[.]")[[1]], -1)
   dir.create(data_dir, showWarnings = FALSE)
@@ -46,8 +47,18 @@ matrixSplit = function(data_file, nb_comp) {
   utils::write.table(mat@Dim, file = file_path,
               quote = FALSE, row.names = FALSE, col.names = FALSE, sep = "\n")
 
-  print(paste("Split:", data_file))
-  print(paste("Data dimension:", length(mat@i), length(mat@j)))
-  print(paste("Number of components:", nb_comp))
-  print(paste0("Components saved in: ~/", data_dir))
+  message = paste(
+    "Splitting object:",
+    paste("  Path:", data_file),
+    paste("  Data dimension:", length(mat@i), length(mat@j)),
+    paste("  Number of components:", nb_comp),
+    paste0("  Components saved in: ~/", data_dir),
+    "", sep = "\n"
+  )
+  if (verbose) cat(message)
+
+  # print(paste("Split:", data_file))
+  # print(paste("Data dimension:", length(mat@i), length(mat@j)))
+  # print(paste("Number of components:", nb_comp))
+  # print(paste0("Components saved in: ~/", data_dir))
 }

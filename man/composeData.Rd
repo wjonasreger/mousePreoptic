@@ -4,7 +4,12 @@
 \alias{composeData}
 \title{Compose package datasets from component data}
 \usage{
-composeData()
+composeData(verbose = TRUE, merge_verbose = FALSE)
+}
+\arguments{
+\item{verbose}{A boolean to print result summary for saving objects}
+
+\item{merge_verbose}{A boolean to print result summary for data merges}
 }
 \description{
 Compose package datasets from component data

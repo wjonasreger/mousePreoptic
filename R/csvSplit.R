@@ -3,6 +3,7 @@
 #' @param data_file A character vector with one element as the path to the file to split
 #' @param nb_comp A numeric vector with one element to specify how many components to split the file into
 #' @param axis A numeric vector with one element to specify axis to split (0: rows, 1: columns)
+#' @param verbose A boolean to print result summary
 #'
 #' @export
 #'
@@ -10,7 +11,7 @@
 #' \dontrun{
 #' csvSplit(data_file = "data/example_data/data.csv", nb_comp = 2, axis = 0)
 #' }
-csvSplit = function(data_file, nb_comp, axis = 0) {
+csvSplit = function(data_file, nb_comp, axis = 0, verbose = FALSE) {
   # create data directory
   data_dir = utils::head(strsplit(data_file, "[.]")[[1]], -1)
   dir.create(data_dir, showWarnings = FALSE)
@@ -42,8 +43,18 @@ csvSplit = function(data_file, nb_comp, axis = 0) {
     utils::write.csv(df_tmp, file_path, row.names = FALSE)
     iter = iter + 1
   }
-  print(paste("Split:", data_file))
-  print(paste("Data dimension:", nrow(df), ncol(df)))
-  print(paste("Number of components:", nb_comp))
-  print(paste0("Components saved in: ~/", data_dir))
+  message = paste(
+    "Splitting object:",
+    paste("  Split:", data_file),
+    paste("  Data dimension:", nrow(df), ncol(df)),
+    paste("  Number of components:", nb_comp),
+    paste0("  Components saved in: ~/", data_dir),
+    "", sep = "\n"
+  )
+  if (verbose) cat(message)
+
+  # print(paste("Split:", data_file))
+  # print(paste("Data dimension:", nrow(df), ncol(df)))
+  # print(paste("Number of components:", nb_comp))
+  # print(paste0("Components saved in: ~/", data_dir))
 }

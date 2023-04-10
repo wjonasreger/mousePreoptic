@@ -2,6 +2,7 @@
 #'
 #' @param data_dir A character vector with one element as the path to the directory of components to merge
 #' @param axis A numeric vector with one element to specify axis to merge (0: rows, 1: columns)
+#' @param verbose A boolean to print result summary
 #'
 #' @return A Data.Frame dataset
 #' @export
@@ -10,7 +11,7 @@
 #' \dontrun{
 #' csvMerge(data_dir = "data/example_data/data")
 #' }
-csvMerge = function(data_dir, axis = 0) {
+csvMerge = function(data_dir, axis = 0, verbose = FALSE) {
   # empty data
   df = c()
   # list of component files
@@ -24,8 +25,17 @@ csvMerge = function(data_dir, axis = 0) {
       df = cbind(df, df_tmp)
     }
   }
-  print(paste("Merge:", data_dir))
-  print(paste("Number of components:", length(file_list)))
-  print(paste("Data dimension:", nrow(df), ncol(df)))
+  message = paste(
+    "Merging objects:",
+    paste("  Path:", data_dir),
+    paste("  Number of components:", length(file_list)),
+    paste("  Data dimension:", nrow(df), ncol(df)),
+    "", sep = "\n"
+  )
+  if (verbose) cat(message)
+
+  # print(paste("Merge:", data_dir))
+  # print(paste("Number of components:", length(file_list)))
+  # print(paste("Data dimension:", nrow(df), ncol(df)))
   return (df)
 }

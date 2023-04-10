@@ -4,7 +4,7 @@
 \alias{csvSplit}
 \title{CSV split function for large CSV files}
 \usage{
-csvSplit(data_file, nb_comp, axis = 0)
+csvSplit(data_file, nb_comp, axis = 0, verbose = FALSE)
 }
 \arguments{
 \item{data_file}{A character vector with one element as the path to the file to split}
@@ -12,6 +12,8 @@ csvSplit(data_file, nb_comp, axis = 0)
 \item{nb_comp}{A numeric vector with one element to specify how many components to split the file into}
 
 \item{axis}{A numeric vector with one element to specify axis to split (0: rows, 1: columns)}
+
+\item{verbose}{A boolean to print result summary}
 }
 \description{
 CSV split function for large CSV files

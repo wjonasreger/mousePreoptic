@@ -4,12 +4,14 @@
 \alias{matrixSplit}
 \title{Matrix split function for large Matrix files}
 \usage{
-matrixSplit(data_file, nb_comp)
+matrixSplit(data_file, nb_comp, verbose = FALSE)
 }
 \arguments{
 \item{data_file}{A character vector with one element as the path to the file to split}
 
 \item{nb_comp}{A numeric vector with one element to specify how many components to split the file into}
+
+\item{verbose}{A boolean to print result summary}
 }
 \description{
 Matrix split function for large Matrix files

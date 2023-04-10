@@ -4,10 +4,12 @@
 \alias{matrixMerge}
 \title{Matrix merge function for Matrix component files}
 \usage{
-matrixMerge(data_dir)
+matrixMerge(data_dir, verbose = FALSE)
 }
 \arguments{
 \item{data_dir}{A character vector with one element as the path to the directory of components to merge}
+
+\item{verbose}{A boolean to print result summary}
 }
 \value{
 A dgTMatrix object dataset

@@ -4,7 +4,10 @@
 \alias{loadData}
 \title{Load package datasets from composed Rdata}
 \usage{
-loadData()
+loadData(verbose = TRUE)
+}
+\arguments{
+\item{verbose}{A boolean to print result summary for loading objects}
 }
 \description{
 Load package datasets from composed Rdata

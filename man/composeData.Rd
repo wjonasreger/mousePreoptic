@@ -12,7 +12,22 @@ composeData(verbose = FALSE, merge_verbose = FALSE)
 \item{merge_verbose}{A boolean to print result summary for data merges (Default: FALSE)}
 }
 \description{
-Compose package datasets from component data
+Composes and/or converts the following dataset directories/files to .RData format in post-installation
+when user runs \code{composeData()}:
+\itemize{
+\item example datasets
+\itemize{
+\item ex_data/ (csv components)
+\item ex_matrix/ (matrix components)
+}
+\item bio data
+\itemize{
+\item GEO_barcodes.tsv (tsv dataset)
+\item GEO_genes.tsv (tsv dataset)
+\item GEO_matrix/ (matrix components)
+\item DRYAD_data/ (csv components)
+}
+}
 }
 \examples{
 \dontrun{

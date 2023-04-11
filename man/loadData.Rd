@@ -7,15 +7,29 @@
 loadData(datasets = "all", verbose = FALSE)
 }
 \arguments{
-\item{datasets}{Character vector to select which datasets to load - one of 'all', 'bio', or 'example' (Default: "all")}
+\item{datasets}{Character vector to select which datasets to load - one of 'all', 'bio', or 'example' (Default: "bio")}
 
 \item{verbose}{A boolean to print result summary for loading objects (Default: FALSE)}
 }
 \description{
-Load package datasets from composed Rdata
+Loads package datasets to global environment. User has the option to load all, only example, or only bio datasets.
+\itemize{
+\item example data
+\itemize{
+\item ex_data
+\item ex_matrix
+}
+\item bio data
+\itemize{
+\item GEO_barcodes
+\item GEO_genes
+\item GEO_matrix
+\item DRYAD_data
+}
+}
 }
 \examples{
 \dontrun{
-loadData(datasets = "all", verbose = FALSE)
+loadData(datasets = "bio", verbose = FALSE)
 }
 }

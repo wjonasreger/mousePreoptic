@@ -9,7 +9,7 @@
 A data frame with 27998 rows and 2 columns:
 \describe{
 \item{ensembl}{`character` vector - ENSEMBL Gene IDS}
-\item{short_gene_name}{`character` vector - Short Gene Names}
+\item{gene_short_name}{`character` vector - Short Gene Names}
 }
 }
 }

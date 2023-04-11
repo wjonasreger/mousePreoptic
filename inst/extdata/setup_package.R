@@ -1,11 +1,15 @@
 library(devtools)
 
+start = Sys.time()
+
 package_path = here::here(); package_path
 setwd(package_path)
 
 devtools::load_all()
 devtools::document()
 devtools::check()
+
+print(Sys.time() - start)
 
 # "illegally" add Rd documentation files to "~/mousePreopticR/man"
 # for package datasets that do not technically exist at installation time
@@ -18,6 +22,10 @@ file.copy(from = file.path(ext_man_path, rd_files), to = file.path(tar_man_path,
           overwrite = TRUE)
 
 devtools::install()
+
+print(Sys.time() - start)
+# approximately 20-30 minutes
+
 .rs.restartR()
 
 # here::here()

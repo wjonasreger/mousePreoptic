@@ -25,6 +25,7 @@ matrixMerge = function(data_dir, verbose = FALSE) {
 
   # create new dgTMatrix
   mat = methods::new("dgTMatrix", i = i, j = j, x = x, Dim = Dim)
+  # mat = methods::new("dgCMatrix", i = i, j = j, x = x, Dim = Dim)
 
   message = paste(
     "Merging objects:",

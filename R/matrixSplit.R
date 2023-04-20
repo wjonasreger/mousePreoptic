@@ -17,7 +17,6 @@ matrixSplit = function(data_file, nb_comp, verbose = FALSE) {
 
   # load data
   mat = Matrix::readMM(data_file)
-  # df = read.csv(data_file)
   size = length(mat@i)
   comp_size = ceiling(size/nb_comp)
 

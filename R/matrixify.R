@@ -54,29 +54,22 @@ matrixify = function(data, col_names = NULL, row_names = NULL, col_subset = NULL
   # store meta data
   for (c in col_meta) {meta_data[[c]] = tmp_data[, c]}
 
+
   # create sparse matrix object of data
   if (transpose) {
-    mat = with(tmp_data_long, {
-      tmp = Matrix::sparseMatrix(
-        i = match(col, colnames(tmp_data[, col_subset])),
-        j = match(row, rownames(tmp_data[, col_subset])),
-        x = values,
-        dims = rev(dim(tmp_data[, col_subset])))
-      tmp@Dimnames = list(colnames(tmp_data[, col_subset]),
-                          rownames(tmp_data[, col_subset]))
-      as(tmp, "CsparseMatrix")
-    })
+    mat = methods::new("dgTMatrix",
+                       i = as.integer(match(tmp_data_long$col, colnames(tmp_data[, col_subset])) - 1),
+                       j = as.integer(match(tmp_data_long$row, rownames(tmp_data[, col_subset])) - 1),
+                       x = as.numeric(tmp_data_long$values),
+                       Dim = rev(dim(tmp_data[, col_subset])))
+    mat@Dimnames = list(colnames(tmp_data[, col_subset]), rownames(tmp_data[, col_subset]))
   } else {
-    mat = with(tmp_data_long, {
-      tmp = Matrix::sparseMatrix(
-        i = match(row, rownames(tmp_data[, col_subset])),
-        j = match(col, colnames(tmp_data[, col_subset])),
-        x = values,
-        dims = dim(tmp_data[, col_subset]))
-      tmp@Dimnames = list(rownames(tmp_data[, col_subset]),
-                          colnames(tmp_data[, col_subset]))
-      as(tmp, "CsparseMatrix")
-    })
+    mat = methods::new("dgTMatrix",
+                       i = as.integer(match(tmp_data_long$row, rownames(tmp_data[, col_subset])) - 1),
+                       j = as.integer(match(tmp_data_long$col, colnames(tmp_data[, col_subset])) - 1),
+                       x = as.numeric(tmp_data_long$values),
+                       Dim = dim(tmp_data[, col_subset]))
+    mat@Dimnames = list(rownames(tmp_data[, col_subset]), colnames(tmp_data[, col_subset]))
   }
 
   return(list(matrix = mat, metadata = meta_data))

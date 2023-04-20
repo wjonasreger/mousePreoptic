@@ -1,6 +1,6 @@
 Package: mousePreopticR
 Title: Mouse Hypothalamic Preoptic Region Cell Datasets and R Functions
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Jonas", "Reger", , "wjonasreger@gmail.com", role = c("aut", "cre"))
 Description: Bioinformatics datasets and convenience functions to reconstruct data components to make data loading/sharing easier for collaborative analysis in R.

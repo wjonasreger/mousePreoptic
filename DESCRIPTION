@@ -13,6 +13,8 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     Matrix,
+    dplyr,
+    tidyr,
     utils,
     methods
 URL: https://github.com/wjonasreger/mousePreopticR

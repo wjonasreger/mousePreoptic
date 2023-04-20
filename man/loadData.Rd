@@ -7,7 +7,7 @@
 loadData(datasets = "all", verbose = FALSE)
 }
 \arguments{
-\item{datasets}{Character vector to select which datasets to load - one of 'all', 'bio', or 'example' (Default: "bio")}
+\item{datasets}{Character vector to select which datasets to load - one of 'all', 'bio', 'GEO' or 'DRYAD' (Default: "all")}
 
 \item{verbose}{A boolean to print result summary for loading objects (Default: FALSE)}
 }
@@ -30,6 +30,6 @@ Loads package datasets to global environment. User has the option to load all, o
 }
 \examples{
 \dontrun{
-loadData(datasets = "bio", verbose = FALSE)
+loadData(datasets = "all", verbose = FALSE)
 }
 }

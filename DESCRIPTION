@@ -16,6 +16,8 @@ Imports:
     dplyr,
     tidyr,
     utils,
+    here,
+    stats,
     methods
 URL: https://github.com/wjonasreger/mousePreopticR
 BugReports: https://github.com/wjonasreger/mousePreopticR/issues

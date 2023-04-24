@@ -11,7 +11,8 @@
 #'
 #' @examples
 #' \dontrun{
-#' tableSplit(data_file = "data/example_data/data.tsv", nb_comp = 2, axis = 0, header = FALSE, sep = "\t", verbose = FALSE)
+#' tableSplit(data_file = "data/example_data/data.tsv", nb_comp = 2, axis = 0,
+#'            header = FALSE, sep = "\t", verbose = FALSE)
 #' }
 tableSplit = function(data_file, nb_comp, axis = 0, header = FALSE, sep = ',', verbose = FALSE) {
   # create data directory

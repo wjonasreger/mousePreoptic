@@ -25,10 +25,10 @@
 #'   row = names[["row"]][1:100]
 #' )
 #'
-#' DRYAD_matrix = matrixify(data = mpr_merfish,
-#'                          names = names,
-#'                          subs = subs,
-#'                          transpose = TRUE)
+#' mpr_merfish_mat = matrixify(data = mpr_merfish,
+#'                             names = names,
+#'                             subs = subs,
+#'                             transpose = TRUE)
 #' }
 matrixify = function(data, names = NULL, subs = NULL, transpose = FALSE, verbose = FALSE, merge_verbose = FALSE) {
   # set dimensional names
@@ -44,8 +44,8 @@ matrixify = function(data, names = NULL, subs = NULL, transpose = FALSE, verbose
   tmp_data = data[subs[["row"]], union(subs[["col"]], names[["meta"]])]
   # pivot data frame to longer format
   tmp_data_long = tmp_data
-  tmp_data_long = dplyr::mutate(row = rownames(tmp_data))
-  tmp_data_long = tidyr::pivot_longer(cols = subs[["col"]], names_to = "col", values_to = "values")
+  tmp_data_long = dplyr::mutate(tmp_data_long$row = rownames(tmp_data))
+  tmp_data_long = tidyr::pivot_longer(tmp_data_long$cols = subs[["col"]], names_to = "col", values_to = "values")
   # tmp_data_long = tmp_data %>%
   #   dplyr::mutate(row = rownames(tmp_data)) %>%
   #   tidyr::pivot_longer(cols = subs[["col"]], names_to = "col", values_to = "values")

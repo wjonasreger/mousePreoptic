@@ -6,11 +6,8 @@
 \usage{
 matrixify(
   data,
-  col_names = NULL,
-  row_names = NULL,
-  col_subset = NULL,
-  row_subset = NULL,
-  col_meta = NULL,
+  names = NULL,
+  subs = NULL,
   transpose = FALSE,
   verbose = FALSE,
   merge_verbose = FALSE
@@ -19,15 +16,9 @@ matrixify(
 \arguments{
 \item{data}{A DataFrame object}
 
-\item{col_names}{A vector of column names or numbers. (Default: NULL)}
+\item{names}{A list of length three with vectors in "col", "row", and "meta" for naming. (Default: NULL)}
 
-\item{row_names}{A vector of row names or numbers. (Default: NULL)}
-
-\item{col_subset}{A vector of columns to subset data with. (Default: NULL)}
-
-\item{row_subset}{A vector of rows to subset data with. (Default: NULL)}
-
-\item{col_meta}{A vector of columns to specify as meta data columns. (Default: NULL)}
+\item{subs}{A list of length two with vectors in "col" and "row" for subsetting. (Default: NULL)}
 
 \item{transpose}{A bollean to indicate if matrix should be transposed. (Default: FALSE)}
 
@@ -36,27 +27,29 @@ matrixify(
 \item{merge_verbose}{A boolean to print result summary for data merges. (Default: FALSE)}
 }
 \value{
-A list of 2 elements with \link{1} the matrix, and \link{2} the metadata list.
+A list of 2 elements with (1) the matrix, and (2) the metadata list.
 }
 \description{
 Convert partial data to a matrix with a metadata list for eventual SummarizedExperiment objects
 }
 \examples{
 \dontrun{
-?DRYAD_data
+?mpr_merfish
 
-col_names = colnames(DRYAD_data)
-row_names = DRYAD_data$Cell_ID
+names = list(
+  col = colnames(mpr_merfish),
+  row = mpr_merfish$Cell_ID,
+  meta = c("Cell_ID", "Centroid_X", "Centroid_Y")
+)
 
-col_subset = col_names[grep("blank", col_names, ignore.case = TRUE)]
-row_subset = row_names[1:100]
+subs = list(
+  col = names[["col"]][grep("blank", names[["col"]], ignore.case = TRUE)],
+  row = names[["row"]][1:100]
+)
 
-DRYAD_matrix = matrixify(data = DRYAD_data,
-                         col_names = col_names,
-                         row_names = row_names,
-                         col_subset = col_subset,
-                         row_subset = row_subset,
-                         col_meta = c("Cell_ID", "Centroid_X", "Centroid_Y"),
+DRYAD_matrix = matrixify(data = mpr_merfish,
+                         names = names,
+                         subs = subs,
                          transpose = TRUE)
 }
 }

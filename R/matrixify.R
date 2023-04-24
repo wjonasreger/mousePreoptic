@@ -25,7 +25,7 @@
 #'   row = names[["row"]][1:100]
 #' )
 #'
-#' mpr_merfish_mat = matrixify(data = mpr_merfish,
+#' mpr_mf_mat = matrixify(data = mpr_merfish,
 #'                             names = names,
 #'                             subs = subs,
 #'                             transpose = TRUE)

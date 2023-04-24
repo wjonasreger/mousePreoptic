@@ -47,9 +47,9 @@ subs = list(
   row = names[["row"]][1:100]
 )
 
-DRYAD_matrix = matrixify(data = mpr_merfish,
-                         names = names,
-                         subs = subs,
-                         transpose = TRUE)
+mpr_merfish_mat = matrixify(data = mpr_merfish,
+                            names = names,
+                            subs = subs,
+                            transpose = TRUE)
 }
 }

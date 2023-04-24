@@ -15,11 +15,11 @@ Imports:
     Matrix,
     dplyr,
     tidyr,
-    importFrom(magrittr,"%>%"),
     utils,
     here,
     stats,
-    methods
+    methods,
+    magrittr
 URL: https://github.com/wjonasreger/mousePreopticR
 BugReports: https://github.com/wjonasreger/mousePreopticR/issues
 Depends: 

@@ -30,6 +30,6 @@ A data frame with 20000 rows and 170 columns:
 mpr_merfish
 }
 \description{
-A dataset of gene expression in mice from experiments by Moffit et al (first 20000 cell samples).
+A dataset of gene expression in mice from experiments by Moffit et al (13444 cell samples in xlim=c(-2500, -2000) and ylim=c(-250, 250)).
 }
 \keyword{datasets}

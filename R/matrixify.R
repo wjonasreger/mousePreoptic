@@ -45,7 +45,8 @@ matrixify = function(data, names = NULL, subs = NULL, transpose = FALSE, verbose
   # pivot data frame to longer format
   tmp_data_long = tmp_data %>%
     dplyr::mutate(row = rownames(tmp_data)) %>%
-    tidyr::pivot_longer(cols = subs[["col"]], names_to = "col", values_to = "values")
+    tidyr::pivot_longer(cols = subs[["col"]], names_to = "col", values_to = "values") %>%
+    dplyr::mutate(values = as.numeric(values))
 
   # subset out the zero counts
   tmp_data_long = tmp_data_long[tmp_data_long$values != 0, ]

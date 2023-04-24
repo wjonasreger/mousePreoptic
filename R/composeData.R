@@ -2,14 +2,11 @@
 #'
 #' Composes and/or converts the following dataset directories/files to .RData format in post-installation
 #' when user runs `composeData()`:
-#'  - example datasets
-#'    - ex_data/ (csv components)
-#'    - ex_matrix/ (matrix components)
 #'  - bio data
-#'    - GEO_barcodes.tsv (tsv dataset)
-#'    - GEO_genes.tsv (tsv dataset)
-#'    - GEO_matrix/ (matrix components)
-#'    - DRYAD_data/ (csv components)
+#'    - mpr_barcodes.tsv (tsv dataset)
+#'    - mpr_genes.tsv (tsv dataset)
+#'    - mpr_matrix/ (matrix components)
+#'    - mpr_merfish/ (csv components)
 #'
 #' @param verbose A boolean to print result summary for saving objects (Default: FALSE)
 #' @param merge_verbose A boolean to print result summary for data merges (Default: FALSE)
@@ -27,30 +24,30 @@ composeData = function(verbose = FALSE, merge_verbose = FALSE) {
 
 
   ### GEO DATA ###
-  # convert GEO_barcodes.tsv
-  GEO_barcodes = composeTable(name = "GEO_barcodes", col_names = c("barcode"), row_names = "barcode",
+  # convert mpr_barcodes.tsv
+  mpr_barcodes = composeTable(name = "mpr_barcodes", col_names = c("barcode"), row_names = "barcode",
                               merge = FALSE, merge_dir = 'extdata', data_dir = 'extdata',
                               verbose = verbose, merge_verbose = FALSE)
-  save(GEO_barcodes, file = file.path(data_dir, "GEO_barcodes.Rdata"))
+  save(mpr_barcodes, file = file.path(data_dir, "mpr_barcodes.Rdata"))
 
-  # convert GEO_genes.tsv
-  GEO_genes = composeTable(name = "GEO_genes", col_names = c("ensembl_id", "gene_short_name"), row_names = "ensembl_id",
+  # convert mpr_genes.tsv
+  mpr_genes = composeTable(name = "mpr_genes", col_names = c("ensembl_id", "gene_short_name"), row_names = "ensembl_id",
                            merge = FALSE, merge_dir = 'extdata', data_dir = 'extdata',
                            verbose = verbose, merge_verbose = FALSE)
-  save(GEO_genes, file = file.path(data_dir, "GEO_genes.Rdata"))
+  save(mpr_genes, file = file.path(data_dir, "mpr_genes.Rdata"))
 
-  # compose and convert /GEO_matrix
-  GEO_matrix = composeMatrix(name = "GEO_matrix", col_names = GEO_barcodes$barcode, row_names = GEO_genes$ensembl_id,
+  # compose and convert /mpr_matrix
+  mpr_matrix = composeMatrix(name = "mpr_matrix", col_names = mpr_barcodes$barcode, row_names = mpr_genes$ensembl_id,
                              merge = TRUE, merge_dir = 'extdata', data_dir = 'extdata',
                              verbose = verbose, merge_verbose = FALSE)
-  save(GEO_matrix, file = file.path(data_dir, "GEO_matrix.Rdata"))
+  save(mpr_matrix, file = file.path(data_dir, "mpr_matrix.Rdata"))
 
 
   ### DRYAD DATA ###
-  # compose and convert /DRYAD_data
-  DRYAD_data = composeTable(name = "DRYAD_data", col_names = 1, row_names = "Cell_ID",
+  # compose and convert /mpr_merfish
+  mpr_merfish = composeTable(name = "mpr_merfish", col_names = 1, row_names = "Cell_ID",
                             merge = TRUE, merge_dir = 'extdata', data_dir = 'extdata',
                             verbose = verbose, merge_verbose = FALSE)
-  save(DRYAD_data, file = file.path(data_dir, "DRYAD_data.Rdata"))
+  save(mpr_merfish, file = file.path(data_dir, "mpr_merfish.Rdata"))
 }
 

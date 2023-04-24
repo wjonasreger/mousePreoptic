@@ -15,17 +15,12 @@ composeData(verbose = FALSE, merge_verbose = FALSE)
 Composes and/or converts the following dataset directories/files to .RData format in post-installation
 when user runs \code{composeData()}:
 \itemize{
-\item example datasets
-\itemize{
-\item ex_data/ (csv components)
-\item ex_matrix/ (matrix components)
-}
 \item bio data
 \itemize{
-\item GEO_barcodes.tsv (tsv dataset)
-\item GEO_genes.tsv (tsv dataset)
-\item GEO_matrix/ (matrix components)
-\item DRYAD_data/ (csv components)
+\item mpr_barcodes.tsv (tsv dataset)
+\item mpr_genes.tsv (tsv dataset)
+\item mpr_matrix/ (matrix components)
+\item mpr_merfish/ (csv components)
 }
 }
 }

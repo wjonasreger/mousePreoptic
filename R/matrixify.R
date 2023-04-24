@@ -43,12 +43,9 @@ matrixify = function(data, names = NULL, subs = NULL, transpose = FALSE, verbose
   # subset data frame
   tmp_data = data[subs[["row"]], union(subs[["col"]], names[["meta"]])]
   # pivot data frame to longer format
-  tmp_data_long = tmp_data
-  tmp_data_long = dplyr::mutate(tmp_data_long$row = rownames(tmp_data))
-  tmp_data_long = tidyr::pivot_longer(tmp_data_long$cols = subs[["col"]], names_to = "col", values_to = "values")
-  # tmp_data_long = tmp_data %>%
-  #   dplyr::mutate(row = rownames(tmp_data)) %>%
-  #   tidyr::pivot_longer(cols = subs[["col"]], names_to = "col", values_to = "values")
+  tmp_data_long = tmp_data %>%
+    dplyr::mutate(row = rownames(tmp_data)) %>%
+    tidyr::pivot_longer(cols = subs[["col"]], names_to = "col", values_to = "values")
 
   # subset out the zero counts
   tmp_data_long = tmp_data_long[tmp_data_long$values != 0, ]

@@ -15,6 +15,7 @@ Imports:
     Matrix,
     dplyr,
     tidyr,
+    importFrom(magrittr,"%>%"),
     utils,
     here,
     stats,
